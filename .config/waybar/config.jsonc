@@ -1,0 +1,136 @@
+{
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  /* === Modules Order === */
+  "modules-left": [
+    "custom/archicon",
+    "clock",
+    "cpu",
+    "memory",
+    "disk#system",
+    "disk#1TB",
+    "disk#8TB",
+    "disk#16TB",
+    "temperature"
+  ],
+  "modules-center": [
+    "river/tags"
+  ],
+  "modules-right": [
+    "tray",
+    "idle_inhibitor",
+    "pulseaudio/slider",
+    "pulseaudio",
+    "network"
+  ],
+  /* === Modules Left === */
+  "custom/archicon": {
+    "format": "",
+    "on-click": "rofi -show drun",
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "Europe/Helsinki",
+    "format": "{:%H:%M %a %d.%m.%Y}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true,
+    "tooltip-format": "CPU in use: {usage}%\nCores: {cores}"
+  },
+  "memory": {
+    "format": "{}% 󰍛",
+    "tooltip": true,
+    "tooltip-format": "RAM in use: {used} / {total} ({percentage}%)"
+  },
+  "disk#system": {
+    "format": "{percentage_free}% ",
+    "tooltip": true,
+    "tooltip-format": "1TB NVME: {free} / {total} ({percentage_free}%)"
+  },
+  "disk#1TB": {
+    "format": "{percentage_free}% ",
+    "path": "/mnt/1TB",
+    "tooltip": true,
+    "tooltip-format": "1TB SATA SDD: {free} / {total} ({percentage_free}%)"
+  },
+  "disk#8TB": {
+    "format": "{percentage_free}% ",
+    "path": "/mnt/8TB",
+    "tooltip": true,
+    "tooltip-format": "8TB HDD: {free} / {total} ({percentage_free}%)"
+  },
+  "disk#16TB": {
+    "format": "{percentage_free}% ",
+    "path": "/mnt/16TB",
+    "tooltip": true,
+    "tooltip-format": "16TB HDD: {free} / {total} ({percentage_free}%)"
+  },
+  "temperature": {
+    "thermal-zone": 0,
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "format": "{temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "Current temperature: {temperatureC}°C",
+    "format-icons": [
+      ""
+    ]
+  },
+  /* === Modules Center === */
+  "river/tags": {
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "", // change to your preferred icons
+      "occupied": "",
+      "urgent": "",
+      "empty": ""
+    }
+  },
+
+  /* === Modules Right === */
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "pulseaudio/slider": {
+    "format": "{volume}%",
+    "format-muted": " MUTE",
+    "step": 5,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    }
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  }
+}
