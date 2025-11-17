@@ -20,8 +20,11 @@ riverctl spawn mako
 # Reset processes and set wallpaper
 # riverctl spawn "sh ~/.config/river/scripts/pkill_bc"
 
+# Try in swayidle.conf?
+# for_window [class="steam_app*"] inhibit_idle focus
+
 # Set screenlock timeout
-riverctl spawn "swayidle -w timeout 600 ~/.config/river/scripts/wayland_session_lock"
+# riverctl spawn "swayidle -w timeout 600 ~/.config/river/scripts/wayland_session_lock"
 
 # Clipboard history
 riverctl spawn "wl-clipboard-histry -t"
@@ -31,7 +34,7 @@ riverctl spawn "wl-paste --type images --watch cliphist store"
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 # Control+Return to start an instance of kitty
-riverctl map normal Control Return spawn kitty
+riverctl map normal Control Return spawn foot
 
 # Super+D to start an instance of rofi
 riverctl map normal Super D spawn "rofi -show drun"
@@ -209,7 +212,8 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 100% &
 
 # Set wallpaper
-swaybg -i "$HOME/Kuvat/Taustakuva.png" -m fill &
+img=$(find "${HOME}/.config/river/backgrounds" -type f | shuf -n 1)
+swaybg -i "$img" -m fill &
 
 # Other apps
 udiskie &
@@ -220,4 +224,4 @@ mullvad-exclude vesktop &
 signal-desktop &
 steam -silent &
 blueman-applet &
-kitty
+foot

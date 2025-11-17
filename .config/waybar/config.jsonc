@@ -23,14 +23,13 @@
   ],
   "modules-right": [
     "tray",
-    "idle_inhibitor",
     "pulseaudio/slider",
     "pulseaudio",
     "network"
   ],
   /* === Modules Left === */
   "custom/archicon": {
-    "format": "",
+    "format": "",
     "on-click": "rofi -show drun",
     "tooltip": false
   },
@@ -100,13 +99,6 @@
   "tray": {
     "icon-size": 16,
     "spacing": 10,
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
   },
   "pulseaudio/slider": {
     "format": "{volume}%",

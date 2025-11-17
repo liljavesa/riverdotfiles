@@ -19,12 +19,11 @@ window#waybar.hidden {
 #clock,
 #cpu,
 #memory,
-#disk,
-#disk#1TB,
-#disk#8TB,
-#disk#16TB,
+#disk.system,
+#disk.1TB,
+#disk.8TB,
+#disk.16TB,
 #temperature,
-#idle_inhibitor,
 #pulseaudio,
 #pulseaudio-slider,
 #network,
@@ -32,15 +31,15 @@ window#waybar.hidden {
   color: #161320;
   margin-top: 6px;
   margin-bottom: 6px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   transition: none;
 }
 
 /* Separation to the left */
 #custom-archicon,
 #cpu,
-#idle_inhibitor {
+#pulseaudio-slider {
   margin-left: 5px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -49,7 +48,7 @@ window#waybar.hidden {
 /* Separation to the rigth */
 #clock,
 #temperature,
-#custom-language {
+#network {
   margin-right: 5px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -77,12 +76,22 @@ window#waybar.hidden {
   background: #DDB6F2;
 }
 
-#disk,
-#disk#1TB,
-#disk#8TB,
-#disk#16TB {
+#disk.system {
   background: #F5C2E7;
 }
+
+#disk.1TB {
+  background: #F6C0D6;
+}
+
+#disk.8TB {
+  background: #F7B6BD;
+}
+
+#disk.16TB {
+  background: #F8B88C;
+}
+
 #temperature {
   background: #F8BD96;
 }
@@ -118,31 +127,9 @@ window#waybar.hidden {
 #workspaces button.active:hover {}
 
 /* Modules right */
-#taskbar {
+#tray {
   background: transparent;
   border-radius: 10px;
-  padding: 0px 5px;
-  margin: 6px 5px;
-}
-
-#taskbar button {
-  padding: 0px 5px;
-  margin: 0px 3px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-#taskbar button.active {
-  background: rgba(34, 36, 54, 0.5);
-}
-
-#taskbar button:hover {
-  background: rgba(34, 36, 54, 0.5);
-}
-
-#idle_inhibitor {
-  background: #B5E8E0;
-  padding-right: 15px;
 }
 
 #pulseaudio {
