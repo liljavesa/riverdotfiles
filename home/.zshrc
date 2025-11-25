@@ -6,7 +6,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob nomatch notify
 unsetopt beep
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/lilja/.zshrc'
@@ -21,6 +21,9 @@ compinit
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+bindkey -M emacs '^[[1;5D' backward-word  
+bindkey -M emacs '^[[1;5C' forward-word  
 
 #aliases
 alias ls='ls --color=auto'
