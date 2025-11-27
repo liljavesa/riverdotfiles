@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(sheldon source)"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
