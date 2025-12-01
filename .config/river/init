@@ -55,7 +55,10 @@ riverctl map normal Super T spawn "$HOME/.config/river/scripts/toggle-display.sh
 riverctl map normal None Print spawn "grim - | wl-copy"
 
 # Shift+PrtSc to take a selected screenshot to clipboard
-riverctl map normal Shift Print spawn ~/.config/river/scripts/screenshot.sh
+riverctl map normal Shift Print spawn "$HOME/.config/river/scripts/screenshot.sh"
+
+# Super+Shift+R to start and stop recording
+#riverctl map normal Super+Shift R spawn "$HOME/.config/river/scripts/screenrecord.sh"
 
 # Super+Shift+E to exit river
 # riverctl map normal Super+Shift E exit
@@ -220,7 +223,7 @@ udiskie &
 export QT_QPA_PLATFORMTHEME=qt5ct &
 riverctl spawn 'sleep 3 && mullvad connect' &
 qbittorrent &
-mullvad-exclude vesktop &
+mullvad-exclude equibop &
 signal-desktop &
 steam -silent &
 blueman-applet &
