@@ -86,15 +86,9 @@
   },
   /* === Modules Center === */
   "river/tags": {
-    "format": "{icon}",
-    "format-icons": {
-      "focused": "", // change to your preferred icons
-      "occupied": "",
-      "urgent": "",
-      "empty": ""
-    }
+    "num-tags": 9,
+    "tag-labels": ["","","","","","","","",""]
   },
-
   /* === Modules Right === */
   "tray": {
     "icon-size": 16,

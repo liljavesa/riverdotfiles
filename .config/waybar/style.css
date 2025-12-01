@@ -24,6 +24,7 @@ window#waybar.hidden {
 #disk.8TB,
 #disk.16TB,
 #temperature,
+#tags,
 #pulseaudio,
 #pulseaudio-slider,
 #network,
@@ -97,34 +98,34 @@ window#waybar.hidden {
 }
 
 /* Modules center */
-#workspaces {
-  background: rgba(0, 0, 0, 0.5);
+#tags {
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   margin: 6px 5px;
   padding: 0px 6px;
 }
 
-#workspaces button {
-  color: #B5E8E0;
+#tags button {
   background: transparent;
-  padding: 4px 4px;
+  padding: 4px 6px;
   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-#workspaces button.occupied {
+#tags button.occupied {
   color: #A6E3A1;
 }
 
-#workspaces button.active {
+#tags button.focused {
   color: #89B4FA;
+  padding: 6px 8px;
   text-shadow: 0 0 4px #ABE9B3;
 }
 
-#workspaces button:hover {
+#tags button:hover {
   color: #89B4FA;
 }
 
-#workspaces button.active:hover {}
+#tags button.active:hover {}
 
 /* Modules right */
 #tray {
