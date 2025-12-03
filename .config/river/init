@@ -11,6 +11,10 @@
 # Environment variables
 export XDG_CURRENT_DESKTOP=river
 export XDG_SESSION_DESKTOP=river
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
 
 # Panels and notifications
@@ -221,6 +225,7 @@ swaybg -i "$img" -m fill &
 # Other apps
 udiskie &
 export QT_QPA_PLATFORMTHEME=qt5ct &
+fcitx5 -d &
 riverctl spawn 'sleep 3 && mullvad connect' &
 qbittorrent &
 mullvad-exclude equibop &
