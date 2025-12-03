@@ -13,9 +13,6 @@
     "cpu",
     "memory",
     "disk#system",
-    "disk#1TB",
-    "disk#8TB",
-    "disk#16TB",
     "temperature"
   ],
   "modules-center": [
@@ -55,25 +52,7 @@
   "disk#system": {
     "format": "{percentage_free}% ",
     "tooltip": true,
-    "tooltip-format": "1TB NVME: {free} / {total} ({percentage_free}%)"
-  },
-  "disk#1TB": {
-    "format": "{percentage_free}% ",
-    "path": "/mnt/1TB",
-    "tooltip": true,
-    "tooltip-format": "1TB SATA SDD: {free} / {total} ({percentage_free}%)"
-  },
-  "disk#8TB": {
-    "format": "{percentage_free}% ",
-    "path": "/mnt/8TB",
-    "tooltip": true,
-    "tooltip-format": "8TB HDD: {free} / {total} ({percentage_free}%)"
-  },
-  "disk#16TB": {
-    "format": "{percentage_free}% ",
-    "path": "/mnt/16TB",
-    "tooltip": true,
-    "tooltip-format": "16TB HDD: {free} / {total} ({percentage_free}%)"
+    "tooltip-format": "System Disk: {free} / {total} ({percentage_free}%)"
   },
   "temperature": {
     "thermal-zone": 0,
