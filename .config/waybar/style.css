@@ -19,21 +19,22 @@ window#waybar.hidden {
 #clock,
 #cpu,
 #memory,
-#disk.system,
-#disk.1TB,
-#disk.8TB,
-#disk.16TB,
+#disk,
+#disk#1TB,
+#disk#8TB,
+#disk#16TB,
 #temperature,
-#tags,
+#idle_inhibitor,
 #pulseaudio,
 #pulseaudio-slider,
+#battery,
 #network,
 #language {
   color: #161320;
   margin-top: 6px;
   margin-bottom: 6px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
   transition: none;
 }
 
@@ -77,60 +78,72 @@ window#waybar.hidden {
   background: #DDB6F2;
 }
 
-#disk.system {
+#disk,
+#disk#1TB,
+#disk#8TB,
+#disk#16TB {
   background: #F5C2E7;
 }
-
-#disk.1TB {
-  background: #F6C0D6;
-}
-
-#disk.8TB {
-  background: #F7B6BD;
-}
-
-#disk.16TB {
-  background: #F8B88C;
-}
-
 #temperature {
   background: #F8BD96;
 }
 
 /* Modules center */
-#tags {
-  background: rgba(0, 0, 0, 0.3);
+#workspaces {
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin: 6px 5px;
   padding: 0px 6px;
 }
 
-#tags button {
+#workspaces button {
+  color: #B5E8E0;
   background: transparent;
-  padding: 4px 6px;
+  padding: 4px 4px;
   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-#tags button.occupied {
+#workspaces button.occupied {
   color: #A6E3A1;
 }
 
-#tags button.focused {
+#workspaces button.active {
   color: #89B4FA;
-  padding: 6px 8px;
   text-shadow: 0 0 4px #ABE9B3;
 }
 
-#tags button:hover {
+#workspaces button:hover {
   color: #89B4FA;
 }
 
-#tags button.active:hover {}
+#workspaces button.active:hover {}
 
 /* Modules right */
-#tray {
+#taskbar {
   background: transparent;
   border-radius: 10px;
+  padding: 0px 5px;
+  margin: 6px 5px;
+}
+
+#taskbar button {
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+#taskbar button.active {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#taskbar button:hover {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#idle_inhibitor {
+  background: #B5E8E0;
+  padding-right: 15px;
 }
 
 #pulseaudio {
@@ -147,6 +160,10 @@ window#waybar.hidden {
 
 #pulseaudio-slider slider {}
 
+#battery {
+  color: #1A1826;
+  background: #94E2D5;
+}
 
 #network {
   background: #CBA6F7;

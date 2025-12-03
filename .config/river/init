@@ -11,10 +11,6 @@
 # Environment variables
 export XDG_CURRENT_DESKTOP=river
 export XDG_SESSION_DESKTOP=river
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
 
 # Panels and notifications
@@ -43,6 +39,9 @@ riverctl map normal Control Return spawn foot
 # Super+D to start an instance of rofi
 riverctl map normal Super D spawn "rofi -show drun"
 
+# Super+T to toggle monitor
+riverctl map normal Super T spawn "$HOME/.config/river/scripts/toggle_monitor.sh"
+
 # Exit river
 riverctl map normal Super E spawn "$HOME/.config/river/scripts/rofi_powermenu"
 
@@ -51,9 +50,6 @@ riverctl map normal Control Q close
 
 # Autostart
 #bash "$HOME"/.config/river/autostart.sh
-
-# Super+T to switch from monitor to tv and vice versa
-riverctl map normal Super T spawn "$HOME/.config/river/scripts/toggle-display.sh"
 
 # PrtSc to take a full-screen screenshot to clipboard
 riverctl map normal None Print spawn "grim - | wl-copy"
@@ -210,13 +206,9 @@ rivertile -view-padding 6 -outer-padding 6 &
 # Layout
 riverctl keyboard-layout fi &
 
-# Monitor setup
-wlr-randr --output DP-2 --mode 2560x1440@164.998993 &
-riverctl spawn 'sleep 1 && wlr-randr --output HDMI-A-2 --off' &
-
 # Audio
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river XDG_SESSION_DESKTOP=river &
-wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 100% &
+wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 25% &
 
 # Set wallpaper
 img=$(find "${HOME}/.config/river/backgrounds" -type f | shuf -n 1)
@@ -225,11 +217,8 @@ swaybg -i "$img" -m fill &
 # Other apps
 udiskie &
 export QT_QPA_PLATFORMTHEME=qt5ct &
-fcitx5 -d &
 riverctl spawn 'sleep 3 && mullvad connect' &
-qbittorrent &
 mullvad-exclude equibop &
 signal-desktop &
-steam -silent &
 blueman-applet &
 foot

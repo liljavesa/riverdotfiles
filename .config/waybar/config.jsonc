@@ -25,11 +25,12 @@
     "tray",
     "pulseaudio/slider",
     "pulseaudio",
+    "battery",
     "network"
   ],
   /* === Modules Left === */
   "custom/archicon": {
-    "format": "",
+    "format": "",
     "on-click": "rofi -show drun",
     "tooltip": false
   },
@@ -86,9 +87,15 @@
   },
   /* === Modules Center === */
   "river/tags": {
-    "num-tags": 9,
-    "tag-labels": ["","","","","","","","",""]
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "", // change to your preferred icons
+      "occupied": "",
+      "urgent": "",
+      "empty": ""
+    }
   },
+
   /* === Modules Right === */
   "tray": {
     "icon-size": 16,
@@ -109,6 +116,18 @@
         ""
       ]
     }
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "format-changing": "⚡{capacity}%",
+    "format-full": "🔋 {capacity}%",
+    "interval": 30,
+    "states": {
+        "warning": 25,
+        "critical": 10
+    },
+    "tooltip": false
   },
   "network": {
     "format": "{ifname}",
