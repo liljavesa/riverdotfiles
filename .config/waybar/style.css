@@ -91,7 +91,6 @@ window#waybar.hidden {
 }
 
 #tags button {
-  color: #B5E8E0;
   background: transparent;
   padding: 4px 6px;
   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
